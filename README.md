@@ -8,5 +8,19 @@ The workhorse algorithm for this software is Parallel Tempering (PT), which work
 
 ## Technical Details of the implementation
 
-The software is written in c++, with a swig wrapped version also available in Python (bayesshippy). The compilation/installation is completed using CMake. The "clang" is unsupported at the moment, so the compiler must be gcc (g++).
+The software is written in C++, with a SWIG-wrapped version also available in Python (`bayesshippy`). The compilation/installation is completed using CMake. The "clang" is unsupported at the moment, so the compiler must be gcc (g++).
 
+## Installation
+
+The basic requirements of `BayesShip` can be installed from [BayesReqs](https://github.com/bayescollab/BayesReqs). If installing from source, one can simply go through the installation of `BayesReqs` and then clone `BayesShip` (one may do so under `/opt`). Inside of `BayesShip`, one can then run 
+
+```shell
+mkdir build
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local ../
+make -j 4 install
+```
+
+An alternative is to install the packaged image, if your purpose is to simply use the `BayesShip` library:
+```
+docker pull ghcr.io/bayescollab/bayesship:release
+```
